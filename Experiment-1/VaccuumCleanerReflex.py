@@ -9,7 +9,6 @@ if roomAStatus == 0:
     print("Cleaning Room")
 else:
     print("Room A is Clean.")
-print("Moving to room B")
 if roomBStatus == 0:
     print("Room B is Dirty.")
     print("Cleaning Room")

@@ -1,9 +1,10 @@
 row = int(input("Enter the number of rows in the grid: "))
 column = int(input("Enter the number of columns in the grid: "))
-currentRow = int(input("Enter the current row: "))
+currentRow = int(input("\nEnter the current row: "))
 currentColumn = int(input("Enter the current column: "))
-goalRow = int(input("Enter the goal row: "))
+goalRow = int(input("\nEnter the goal row: "))
 goalColumn = int(input("Enter the goal column: "))
+print("\nStarting to move")
 while currentRow != goalRow:
     if currentRow > goalRow:
         print("Moving up")
