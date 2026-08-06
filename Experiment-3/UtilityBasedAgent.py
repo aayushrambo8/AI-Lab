@@ -52,6 +52,8 @@ goalColumn = int(input("Enter the goal column: "))
 print("Current Position:", currentRow, currentColumn)
 print("Goal Position:", goalRow, goalColumn)
 
+pathLength = 0
+
 while currentRow != goalRow or currentColumn != goalColumn:
     nextRow = currentRow
     nextColumn = currentColumn
@@ -91,6 +93,7 @@ while currentRow != goalRow or currentColumn != goalColumn:
     grid[currentRow][currentColumn] = "="
     currentRow = nextRow
     currentColumn = nextColumn
+    pathLength += 1
     if grid[currentRow][currentColumn] == "R":
         print("Reward collected")
         grid[currentRow][currentColumn] = "+"
