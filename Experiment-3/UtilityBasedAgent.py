@@ -95,10 +95,10 @@ while currentRow != goalRow or currentColumn != goalColumn:
     currentColumn = nextColumn
     pathLength += 1
     if grid[currentRow][currentColumn] == "R":
-        print("Reward collected")
+        print("Reward collected.")
         grid[currentRow][currentColumn] = "+"
     elif grid[currentRow][currentColumn] == "P":
-        print("Penalty tackled")
+        print("Penalty Encountered.")
         grid[currentRow][currentColumn] = "+"
     print("\nCurrent grid:")
     for row in grid:
