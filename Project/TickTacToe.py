@@ -1,4 +1,4 @@
-"""
+print("""
 Human vs AI Tic-Tac-Toe
 ------------------------
 AI uses the Minimax algorithm (with Alpha-Beta pruning) to play optimally.
@@ -9,7 +9,7 @@ Human is 'X', AI is 'O'. Board positions are numbered 1-9 like a phone keypad:
  4 | 5 | 6
 -----------
  7 | 8 | 9
-"""
+""")
 
 import math
 
