@@ -64,20 +64,23 @@ The $3 \times 3$ game board is represented internally as a 1D list of length 9 c
 
 The implementation in [`TickTacToe.py`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py) is modularized into several core routines:
 
-- **[`minimax(board, depth, is_maximizing, alpha, beta)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L48-L77)**  
-  Executes recursive game-tree traversal with alpha-beta bounds tracking to return the evaluation score for a state.
+- **[`minimax(board, depth, is_ai, alpha, beta)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L28-L56)**  
+  Executes recursive game-tree traversal with alpha-beta bounds tracking, returning a tuple of `(best_score, best_move)`.
   
-- **[`best_ai_move(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L80-L90)**  
-  Iterates over all legal actions for player $\text{MAX}$ (`O`), invoking `minimax(...)` to select the action yielding the maximum evaluation score.
+- **[`check_winner(board, player)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L20-L21)**  
+  Evaluates 8 terminal win conditions (3 horizontal rows, 3 vertical columns, and 2 diagonals) using the global `WIN_COMBOS` tuple.
 
-- **[`check_winner(board, player)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L35-L41)**  
-  Evaluates 8 terminal win conditions (3 horizontal rows, 3 vertical columns, and 2 diagonals) for the specified player.
-
-- **[`available_moves(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L31-L32)**  
+- **[`available_moves(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L24-L25)**  
   Returns a list of unassigned array indices representing permissible state transitions.
 
-- **[`get_human_move(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L93-L101)**  
+- **[`print_board(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L11-L17)**  
+  Formats and outputs the 3x3 game grid to stdout.
+
+- **[`get_human_move(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L59-L67)**  
   Handles terminal input parsing, type checking, bounds validation, and conflict checking against occupied positions.
+
+- **[`play_game()`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L70-L106)**  
+  Main game execution loop managing turn swaps and game end conditions.
 
 ---
 
