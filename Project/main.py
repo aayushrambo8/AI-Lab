@@ -1,7 +1,7 @@
 """
 main.py
 -------
-Pure Python CLI interface for Tic-Tac-Toe Minimax AI.
+Pure Python CLI interface for Tic-Tac-Toe MinMax AI.
 """
 
 from game import EMPTY, checkWinner, availableMoves
