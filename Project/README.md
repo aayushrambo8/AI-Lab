@@ -64,22 +64,22 @@ The $3 \times 3$ game board is represented internally as a 1D list of length 9 c
 
 The implementation in [`TickTacToe.py`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py) is modularized into several core routines:
 
-- **[`minimax(board, depth, is_ai, alpha, beta)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L28-L56)**  
-  Executes recursive game-tree traversal with alpha-beta bounds tracking, returning a tuple of `(best_score, best_move)`.
+- **[`minimax(board, depth, isAi, alpha, beta)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L28-L56)**  
+  Executes recursive game-tree traversal with alpha-beta bounds tracking, returning a tuple of `(bestScore, bestMove)`.
   
-- **[`check_winner(board, player)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L20-L21)**  
-  Evaluates 8 terminal win conditions (3 horizontal rows, 3 vertical columns, and 2 diagonals) using the global `WIN_COMBOS` tuple.
+- **[`checkWinner(board, player)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L20-L21)**  
+  Evaluates 8 terminal win conditions (3 horizontal rows, 3 vertical columns, and 2 diagonals) using the global `winCombos` tuple.
 
-- **[`available_moves(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L24-L25)**  
+- **[`availableMoves(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L24-L25)**  
   Returns a list of unassigned array indices representing permissible state transitions.
 
-- **[`print_board(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L11-L17)**  
+- **[`printBoard(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L11-L17)**  
   Formats and outputs the 3x3 game grid to stdout.
 
-- **[`get_human_move(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L59-L67)**  
+- **[`getHumanMove(board)`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L59-L67)**  
   Handles terminal input parsing, type checking, bounds validation, and conflict checking against occupied positions.
 
-- **[`play_game()`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L70-L106)**  
+- **[`playGame()`](file:///d:/College%20Material/AI%20Lab%20Sem%205/Project/TickTacToe.py#L70-L106)**  
   Main game execution loop managing turn swaps and game end conditions.
 
 ---

@@ -5,45 +5,45 @@ Minimax search algorithm with Alpha-Beta Pruning for Tic-Tac-Toe AI.
 """
 
 import math
-from game import EMPTY, check_winner, available_moves
+from game import EMPTY, checkWinner, availableMoves
 
 
-def minimax(board, depth, is_maximizing, ai_symbol, human_symbol,
+def minimax(board, depth, isMaximizing, aiSymbol, humanSymbol,
             alpha=-math.inf, beta=math.inf):
     """Recursive alpha-beta search algorithm to determine the optimal move score."""
-    if check_winner(board, ai_symbol):
+    if checkWinner(board, aiSymbol):
         return 10 - depth, None
-    if check_winner(board, human_symbol):
+    if checkWinner(board, humanSymbol):
         return depth - 10, None
 
-    moves = available_moves(board)
+    moves = availableMoves(board)
     if not moves:
         return 0, None
 
-    player = ai_symbol if is_maximizing else human_symbol
-    best_score = -math.inf if is_maximizing else math.inf
-    best_move = moves[0]
+    player = aiSymbol if isMaximizing else humanSymbol
+    bestScore = -math.inf if isMaximizing else math.inf
+    bestMove = moves[0]
 
     for move in moves:
         board[move] = player
-        score, _ = minimax(board, depth + 1, not is_maximizing,
-                            ai_symbol, human_symbol, alpha, beta)
+        score, _ = minimax(board, depth + 1, not isMaximizing,
+                            aiSymbol, humanSymbol, alpha, beta)
         board[move] = EMPTY
 
-        if is_maximizing and score > best_score:
-            best_score, best_move = score, move
-            alpha = max(alpha, best_score)
-        elif not is_maximizing and score < best_score:
-            best_score, best_move = score, move
-            beta = min(beta, best_score)
+        if isMaximizing and score > bestScore:
+            bestScore, bestMove = score, move
+            alpha = max(alpha, bestScore)
+        elif not isMaximizing and score < bestScore:
+            bestScore, bestMove = score, move
+            beta = min(beta, bestScore)
 
         if beta <= alpha:
             break  # Prune branch
 
-    return best_score, best_move
+    return bestScore, bestMove
 
 
-def get_ai_move(board, ai_symbol, human_symbol):
+def getAiMove(board, aiSymbol, humanSymbol):
     """Calculates and returns the best move for the AI using Minimax with Alpha-Beta pruning."""
-    _, move = minimax(board, 0, True, ai_symbol, human_symbol)
+    _, move = minimax(board, 0, True, aiSymbol, humanSymbol)
     return move
