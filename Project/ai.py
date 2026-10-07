@@ -1,12 +1,5 @@
-"""
-ai.py
------
-Minimax search algorithm with Alpha-Beta Pruning for Tic-Tac-Toe AI.
-"""
-
 import math
 from game import EMPTY, checkWinner, availableMoves
-
 
 def minimax(board, depth, isMaximizing, aiSymbol, humanSymbol,
             alpha=-math.inf, beta=math.inf):
